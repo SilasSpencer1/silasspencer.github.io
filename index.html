@@ -1,1 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silas Spencer - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins for main font, and others for animation -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&family=Roboto+Slab:wght@400;700&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif; /* Changed font to Poppins */
+            background-color: #ffffff;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Define font classes for animation */
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        .font-roboto-slab { font-family: 'Roboto Slab', serif; }
+        .font-ibm-plex-mono { font-family: 'IBM Plex Mono', monospace; }
+
+        .animated-letter {
+            display: inline-block;
+            transition: font-family 0.2s ease-out, font-weight 0.2s ease-out, text-transform 0.2s ease-out;
+            will-change: font-family, font-weight, text-transform;
+        }
+
+        /* Custom styles for timeline arrows */
+        .timeline-arrow-up::after {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 8px;
+            border-style: solid;
+            border-color: transparent transparent rgba(17, 24, 39, 0.8) transparent;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<!-- Navigation Bar -->
+<nav class="bg-white shadow-md fixed w-full z-20 top-0">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="#home" class="text-2xl font-bold text-emerald-600 rounded-lg p-2 hover:bg-emerald-50 transition duration-300">Silas Spencer</a>
+        <div class="hidden md:flex space-x-2">
+            <a href="#home" class="text-gray-600 hover:text-white hover:bg-emerald-600 font-semibold transition duration-300 rounded-lg px-3 py-2">Home</a>
+            <a href="#about" class="text-gray-600 hover:text-white hover:bg-emerald-600 font-semibold transition duration-300 rounded-lg px-3 py-2">About</a>
+            <a href="#projects" class="text-gray-600 hover:text-white hover:bg-emerald-600 font-semibold transition duration-300 rounded-lg px-3 py-2">Projects</a>
+            <a href="#experience" class="text-gray-600 hover:text-white hover:bg-emerald-600 font-semibold transition duration-300 rounded-lg px-3 py-2">Experience</a>
+        </div>
+        <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-emerald-50 hover:text-emerald-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white py-2 shadow-inner">
+        <a href="#home" class="block px-4 py-2 text-gray-700 hover:bg-emerald-100 transition duration-300 rounded-md mx-2 my-1">Home</a>
+        <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-emerald-100 transition duration-300 rounded-md mx-2 my-1">About</a>
+        <a href="#projects" class="block px-4 py-2 text-gray-700 hover:bg-emerald-100 transition duration-300 rounded-md mx-2 my-1">Projects</a>
+        <a href="#experience" class="block px-4 py-2 text-gray-700 hover:bg-emerald-100 transition duration-300 rounded-md mx-2 my-1">Experience</a>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="min-h-screen flex items-center justify-center pt-24 pb-12 px-4">
+    <div class="relative w-full max-w-5xl mx-auto">
+        <img src="IMG_7765.jpg" alt="Silas Spencer" class="block w-full rounded-2xl shadow-xl object-cover" style="max-height: 75vh;">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60 rounded-2xl"></div>
+        <div class="absolute inset-0 flex flex-col items-center justify-between text-center p-6 py-12 md:py-16">
+            <div class="relative z-10 text-white">
+                <h1 id="animated-name" class="text-5xl md:text-7xl font-extrabold rounded-xl">
+                    <span class="animated-letter">S</span><span class="animated-letter">i</span><span class="animated-letter">l</span><span class="animated-letter">a</span><span class="animated-letter">s</span><span class="animated-letter">&nbsp;</span><span class="animated-letter">S</span><span class="animated-letter">p</span><span class="animated-letter">e</span><span class="animated-letter">n</span><span class="animated-letter">c</span><span class="animated-letter">e</span><span class="animated-letter">r</span>
+                </h1>
+            </div>
+            <div class="relative z-10 text-white">
+                <p class="text-xl md:text-2xl mb-8 rounded-lg p-3 bg-black bg-opacity-20 inline-block">Computer Science & Math Student @ Northeastern University</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#projects" class="bg-emerald-600 text-white hover:bg-emerald-700 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">Projects</a>
+                    <a href="#experience" class="bg-emerald-600 text-white hover:bg-emerald-700 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">Experience</a>
+                    <a href="SilasSpencerResume.pdf" download="SilasSpencerResume.pdf" class="bg-white text-emerald-600 hover:bg-emerald-50 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 inline-flex items-center gap-2">
+                        <i class="fas fa-download"></i> Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="container mx-auto px-6 py-16 mt-8 md:mt-16 bg-white">
+    <h2 class="text-4xl font-bold text-center text-emerald-600 mb-12">About Me</h2>
+    <div class="flex flex-col md:flex-row items-center md:space-x-12">
+        <div class="md:w-1/2 mb-8 md:mb-0">
+            <img src="meNoWatermark.jpeg" alt="Silas Spencer Profile" class="rounded-xl shadow-lg w-full h-auto object-cover">
+        </div>
+        <div class="md:w-1/2 text-lg text-gray-700 leading-relaxed">
+            <p class="mb-4">Hello! I'm Silas Spencer, a Computer Science and Mathematics student at Northeastern University. My journey in tech began with a fascination for problem-solving and a love for building.</p>
+            <p class="mb-4">I love to learn through experience and the process of experimentation. I'm passionate about contributing to projects that have meaningful, positive impact on people's lives. I strongly believe that those who contribute to developing projects in software should be held to a high standard to create projects that will improve the lives of its users and benefit society in a positive light.</p>
+            <p>Outside of my studies, I enjoy contributing to open-source projects, exploring new technologies, swimming, and playing chess. I'm always eager to learn and collaborate on exciting projects.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-16 mt-8 md:mt-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center text-emerald-600 mb-12">My Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- Project 1: Ninety-Nine DQN -->
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col">
+                <img src="https://placehold.co/400x250/10b981/ffffff?text=RL+Card+Game" alt="Ninety-Nine DQN Project" class="w-full h-48 object-cover">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Ninety-Nine DQN Model</h3>
+                    <p class="text-gray-700 mb-4 flex-grow">An application of deep reinforcement learning to master the complex, two-phase card game "Ninety-Nine," focusing on strategic bidding and gameplay.</p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <a href="https://github.com/SilasSpencer1/NinetyNineDQN" target="_blank" class="text-emerald-600 hover:text-emerald-800 font-semibold inline-flex items-center gap-2">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://production-gradescope-uploads.s3-us-west-2.amazonaws.com/uploads/pdf_attachment/file/182998008/99_RL_Agent_Final_Paper.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAV45MPIOWQTIGJCQZ%2F20250630%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250630T172507Z&X-Amz-Expires=10800&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIEMsNxGjk406h42KWWXVCPdMAvP2eIDcVZjXGSVoJbrsAiACfyffjZXnckhf%2Bhque81jFAMgKQhHPMzwiC%2FzX8Gr3irDBQjA%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDQwNTY5OTI0OTA2OSIM2GNLl7tb1D%2FexGRdKpcF2R3sfSo%2FFP3rv80boNPMEzdU7r9h7kb%2B4o%2Bdx65XTGF9uVh2bSnFj2nX7WevOr0LiLowOza2lvFzaQ98Urq9SVeel8hjKaqp5q6Ipow389lb4ZJRwXZ%2FujtGShzNVdb0tKa%2BQbILjHW3zRlpHeDUrm6gYQlQsSLHO7UFUtVLZRK0Hp7kDTxon3eQHxFlSpXxb4HxXxMd8qwg9i04ONTginiR594740ekIeF21329rBUfn1ch8%2B5uRHDwz89YVK0VGddgi8gWYvR2Zet9aOsPHV2wIp0T4k6NtiBZcmk7mzh3lFVdC%2B7RxSIg5fCxH6HmEG%2BtorzbRUKr7SahF7yspSfF6qdkspftWDsdfpBZbCjnPOzEhan7hCQQ8dDLz3noqvxapyVqJZMpbL%2B2hytuM504qKIX4ZFX7SvaFp0Zo5AhyIzclpfnRBckAq5eC4mOBk2HQU%2FZ9xrC%2F8DuGUFjvXOtCMGwT%2BAyK3xPAwMUfV0nZBeoE8m4ukaKXsMI90PBvlUQy3YOmT%2FHu5CZVan9nG21dfeOj4ujeNveMnU0H1sFW2lBjIZ9LEjscgfd2uL1PQAMypP403eEuCZN84qUjIszoLdGN5MDza8MNYO9MFpf7I9HHxHBiU6w2j1vnGZDUY43SVBWPrvy7xYSCiDdrtJ5Lu5L3YVOpV1nss10BIBkS9kh0x90HNI2r8yWBk0RvuDa1MD90FXMpJbSwl0hxGLFQi%2BeMk1v5Q7uLdqyR9%2FUyRmqP93UhDcZ%2FpOvFlVsLLtdugOLYegz3Cr9v3c4kn8a72NDBKy45szd652%2FqUuKGHyJ87J4wRv4zcBDR02sbGmHZCeuFEtGbXV9rCeRU8AhKS8UYslBFSPPWZBxwlG%2BKHxNoCKbMIfNisMGOrIB8q8JkDtBsmHREt2JfznNS08LHb1jehk7YrTBO1TYp6dbY67U4hcCuzJh6OjrutOFVfJxrXucxwdGGjMGZUNykzpH1mBRMclyMSodTs4HK8uA2nbDHhlvVU3rTHJNgaDB9qa1CMCsLSYpYMNjgw%2B8kcdyWymlFe9b9bcH4oSo1dxE8XSO4z%2BNhoSpYoi70gcjkysE9PRNJ35Vjml7RUKKKp1InPxjke9xv07UYO9T0mwvtw%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=adfe57487c4e18632b0b3c5a0e0ccec281e63771d72de6542e874fd759c40969" target="_blank" class="text-emerald-600 hover:text-emerald-800 font-semibold inline-flex items-center gap-2">
+                            <i class="fas fa-file-alt"></i> Read Paper
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2: Collage Creator -->
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col">
+                <img src="https://placehold.co/400x250/10b981/ffffff?text=Java+Collage+App" alt="Collage Creator Project" class="w-full h-48 object-cover">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Image Collage Creator</h3>
+                    <p class="text-gray-700 mb-4 flex-grow">A robust image processing application built in Java, allowing users to create, manipulate, and save complex collages from various image formats.</p>
+                    <div class="mt-auto">
+                        <a href="https://github.com/SilasSpencer1/CollagePartOneUpdate" target="_blank" class="text-emerald-600 hover:text-emerald-800 font-semibold inline-flex items-center gap-2">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 3: Memory Allocator -->
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col">
+                <img src="https://placehold.co/400x250/10b981/ffffff?text=C+Memory+Allocator" alt="Memory Allocator Project" class="w-full h-48 object-cover">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Custom Memory Allocator</h3>
+                    <p class="text-gray-700 mb-4 flex-grow">A low-level implementation of `malloc`, `free`, and `realloc` in C, providing fundamental memory management functionalities from scratch.</p>
+                    <div class="mt-auto">
+                        <a href="https://github.com/SilasSpencer1/BasicMemAllocator" target="_blank" class="text-emerald-600 hover:text-emerald-800 font-semibold inline-flex items-center gap-2">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" class="py-16 mt-8 md:mt-16 bg-white overflow-x-auto">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center text-emerald-600 mb-24">Experience</h2>
+        <div class="relative w-full" style="min-width: 1200px;">
+            <!-- Horizontal timeline bar -->
+            <div class="absolute top-1/2 left-0 w-full h-0.5 bg-gray-300 -translate-y-1/2"></div>
+
+            <!-- Timeline items container -->
+            <div class="relative flex justify-between w-full">
+
+                <!-- Item 1: Khoury College -->
+                <div class="flex-1 group">
+                    <div class="flex flex-col items-center">
+                        <!-- Company Info (Above) -->
+                        <div class="mb-4 text-center h-20 flex flex-col justify-end">
+                            <img src="khoury logo.webp" alt="Northeastern Logo" class="h-8 mx-auto mb-2">
+                            <h3 class="font-bold text-gray-800">Khoury College</h3>
+                            <p class="text-xs text-gray-500">Teaching Assistant</p>
+                        </div>
+                        <!-- Node -->
+                        <div class="relative z-10 flex items-center justify-center bg-emerald-600 shadow-xl w-12 h-12 rounded-full text-white font-semibold text-sm text-center">May '22</div>
+                        <!-- Popup Card (Below) -->
+                        <div class="absolute top-full mt-4 w-64 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto z-10">
+                            <div class="relative bg-gray-900 bg-opacity-80 backdrop-blur-sm p-4 rounded-lg shadow-2xl border border-white/20 text-left timeline-arrow-up">
+                                <p class="font-bold text-md mb-2 text-emerald-400">Course: Object-Oriented Design</p>
+                                <p class="text-sm text-gray-200 mb-3">Guided undergraduate students through programming assignments, reinforcing foundational CS principles.</p>
+                                <h4 class="font-bold text-md mb-2 text-emerald-400">Core Concepts:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-emerald-200 text-emerald-900 text-xs font-semibold px-2.5 py-0.5 rounded-full">Java</span>
+                                    <span class="bg-emerald-200 text-emerald-900 text-xs font-semibold px-2.5 py-0.5 rounded-full">OOD</span>
+                                    <span class="bg-emerald-200 text-emerald-900 text-xs font-semibold px-2.5 py-0.5 rounded-full">Data Structures</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2: UKG Intern -->
+                <div class="flex-1 group">
+                    <div class="flex flex-col items-center">
+                        <!-- Company Info (Above) -->
+                        <div class="mb-4 text-center h-20 flex flex-col justify-end">
+                            <img src="ukg_log.png" alt="UKG Logo" class="h-6 mx-auto mb-2">
+                            <h3 class="font-bold text-gray-800">UKG</h3>
+                            <p class="text-xs text-gray-500">Software Engineer Intern</p>
+                        </div>
+                        <!-- Node -->
+                        <div class="relative z-10 flex items-center justify-center bg-emerald-600 shadow-xl w-12 h-12 rounded-full text-white font-semibold text-sm text-center">May '23</div>
+                        <!-- Popup Card (Below) -->
+                        <div class="absolute top-full mt-4 w-64 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto z-10">
+                            <div class="relative bg-gray-900 bg-opacity-80 backdrop-blur-sm p-4 rounded-lg shadow-2xl border border-white/20 text-left timeline-arrow-up">
+                                <p class="font-bold text-md mb-2 text-emerald-400">Team: Data Collection</p>
+                                <p class="text-sm text-gray-200 mb-3">Created automation scripts and Jenkins pipelines, reducing QA testing times by 90% and improving deployment efficiency.</p>
+                                <h4 class="font-bold text-md mb-2 text-emerald-400">Tech Stack:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-emerald-200 text-emerald-900 text-xs font-semibold px-2.5 py-0.5 rounded-full">Java</span>
+                                    <span class="bg-emerald-200 text-emerald-900 text-xs font-semibold px-2.5 py-0.5 rounded-full">Kotlin</span>
+                                    <span class="bg-emerald-200 text-emerald-900 text-xs font-semibold px-2.5 py-0.5 rounded-full">Android Studio</span>
+                                    <span class="bg-emerald-200 text-emerald-900 text-xs font-semibold px-2.5 py-0.5 rounded-full">Docker</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3: UKG Co-op -->
+                <div class="flex-1 group">
+                    <div class="flex flex-col items-center">
+                        <!-- Company Info (Above) -->
+                        <div class="mb-4 text-center h-20 flex flex-col justify-end">
+                            <img src="ukg_log.png" alt="UKG Logo" class="h-6 mx-auto mb-2">
+                            <h3 class="font-bold text-gray-800">UKG</h3>
+                            <p class="text-xs text-gray-500">Software Engineer Co-op</p>
+                        </div>
+                        <!-- Node -->
+                        <div class="relative z-10 flex items-center justify-center bg-emerald-600 shadow-xl w-12 h-12 rounded-full text-white font-semibold text-sm text-center">Jan '24</div>
+                        <!-- Popup Card (Below) -->
+                        <div class="absolute top-full mt-4 w-64 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto z-10">
+                            <div class="relative bg-gray-900 bg-opacity-80 backdrop-blur-sm p-4 rounded-lg shadow-2xl border border-white/20 text-left timeline-arrow-up">
+                                <p class="font-bold text-md mb-2 text-emerald-400">Team: Data Collection</p>
+                                <p class="text-sm text-gray-200 mb-3">Developed and optimized features for physical time clock software, enhancing functionality and performance for enterprise clients.</p>
+                                <h4 class="font-bold text-md mb-2 text-emerald-400">Tech Stack:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-emerald-200 text-emerald-900 text-xs font-semibold px-2.5 py-0.5 rounded-full">Java</span>
+                                    <span class="bg-emerald-200 text-emerald-900 text-xs font-semibold px-2.5 py-0.5 rounded-full">Kotlin</span>
+                                    <span class="bg-emerald-200 text-emerald-900 text-xs font-semibold px-2.5 py-0.5 rounded-full">Android Studio</span>
+                                    <span class="bg-emerald-200 text-emerald-900 text-xs font-semibold px-2.5 py-0.5 rounded-full">Docker</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4: Scale AI -->
+                <div class="flex-1 group">
+                    <div class="flex flex-col items-center">
+                        <!-- Company Info (Above) -->
+                        <div class="mb-4 text-center h-20 flex flex-col justify-end">
+                            <img src="scale_logo.jpg" alt="Scale AI Logo" class="h-6 mx-auto mb-2">
+                            <h3 class="font-bold text-gray-800">Scale AI</h3>
+                            <p class="text-xs text-gray-500">Software Engineer, AI Training</p>
+                        </div>
+                        <!-- Node -->
+                        <div class="relative z-10 flex items-center justify-center bg-emerald-600 shadow-xl w-12 h-12 rounded-full text-white font-semibold text-sm text-center">May '24</div>
+                        <!-- Popup Card (Below) -->
+                        <div class="absolute top-full mt-4 w-64 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto z-10">
+                            <div class="relative bg-gray-900 bg-opacity-80 backdrop-blur-sm p-4 rounded-lg shadow-2xl border border-white/20 text-left timeline-arrow-up">
+                                <p class="font-bold text-md mb-2 text-emerald-400">Task: LLM Training Data</p>
+                                <p class="text-sm text-gray-200 mb-3">Trained large language models to handle complex, coding-related queries and improved model reasoning.</p>
+                                <h4 class="font-bold text-md mb-2 text-emerald-400">Tech Stack:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-emerald-200 text-emerald-900 text-xs font-semibold px-2.5 py-0.5 rounded-full">Python</span>
+                                    <span class="bg-emerald-200 text-emerald-900 text-xs font-semibold px-2.5 py-0.5 rounded-full">Java</span>
+                                    <span class="bg-emerald-200 text-emerald-900 text-xs font-semibold px-2.5 py-0.5 rounded-full">C++</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5: CarGurus -->
+                <div class="flex-1 group">
+                    <div class="flex flex-col items-center">
+                        <!-- Company Info (Above) -->
+                        <div class="mb-4 text-center h-20 flex flex-col justify-end">
+                            <img src="https://www.cargurus.com/favicon.ico" alt="CarGurus Logo" class="h-6 mx-auto mb-2 rounded-full">
+                            <h3 class="font-bold text-gray-800">CarGurus</h3>
+                            <p class="text-xs text-gray-500">Software Engineer Intern</p>
+                        </div>
+                        <!-- Node -->
+                        <div class="relative z-10 flex items-center justify-center bg-emerald-600 shadow-xl w-12 h-12 rounded-full text-white font-semibold text-sm text-center">June '25</div>
+                        <!-- Popup Card (Below) -->
+                        <div class="absolute top-full mt-4 w-64 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto z-10">
+                            <div class="relative bg-gray-900 bg-opacity-80 backdrop-blur-sm p-4 rounded-lg shadow-2xl border border-white/20 text-left timeline-arrow-up">
+                                <p class="font-bold text-md mb-2 text-emerald-400">Team: Platform as a Service</p>
+                                <p class="text-sm text-gray-200 mb-3">Focused on building and maintaining cloud infrastructure and core developer tooling.</p>
+                                <h4 class="font-bold text-md mb-2 text-emerald-400">Tech Stack:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-emerald-200 text-emerald-900 text-xs font-semibold px-2.5 py-0.5 rounded-full">GoLang</span>
+                                    <span class="bg-emerald-200 text-emerald-900 text-xs font-semibold px-2.5 py-0.5 rounded-full">Kubernetes</span>
+                                    <span class="bg-emerald-200 text-emerald-900 text-xs font-semibold px-2.5 py-0.5 rounded-full">Docker</span>
+                                    <span class="bg-emerald-200 text-emerald-900 text-xs font-semibold px-2.5 py-0.5 rounded-full">AWS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8 text-center">
+    <div class="container mx-auto px-6">
+        <p>&copy; 2025 Silas Spencer. All rights reserved.</p>
+        <div class="flex justify-center space-x-4 mt-4">
+            <a href="#" class="text-gray-400 hover:text-white transition duration-300">LinkedIn</a>
+            <a href="#" class="text-gray-400 hover:text-white transition duration-300">GitHub</a>
+            <a href="#" class="text-gray-400 hover:text-white transition duration-300">Email</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    });
+
+    // Toggle mobile menu visibility
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Animated name effect
+    document.addEventListener('DOMContentLoaded', () => {
+        const animatedNameElement = document.getElementById('animated-name');
+        const nameText = animatedNameElement.innerText;
+        animatedNameElement.innerHTML = '';
+
+        nameText.split('').forEach(char => {
+            const span = document.createElement('span');
+            span.className = 'animated-letter';
+            span.innerText = char;
+            animatedNameElement.appendChild(span);
+        });
+
+        const letters = document.querySelectorAll('#animated-name .animated-letter');
+        const fontClasses = ['font-poppins', 'font-roboto-slab', 'font-ibm-plex-mono'];
+
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function animateName() {
+            if (letters.length === 0) return;
+
+            letters.forEach(letter => {
+                // Skip spaces
+                if (letter.innerText.trim() === '') {
+                    return;
+                }
+
+                // 1. Apply a random font
+                const randomFontClass = fontClasses[getRandomInt(0, fontClasses.length - 1)];
+                // Remove old font classes before adding the new one
+                fontClasses.forEach(cls => letter.classList.remove(cls));
+                letter.classList.add(randomFontClass);
+
+                // 2. Randomly apply bold or other weights
+                const weights = ['400', '700', '900']; // Using weights available for Poppins
+                letter.style.fontWeight = weights[getRandomInt(0, weights.length - 1)];
+
+                // 3. Randomly apply uppercase or normal capitalization
+                letter.style.textTransform = Math.random() < 0.5 ? 'uppercase' : 'none';
+            });
+        }
+        setInterval(animateName, 500);
+    });
+</script>
+</body>
+</html>
 
